@@ -47,10 +47,11 @@ img {
 
 .page-header {
   padding: 0;
-  margin: 0;
-  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/banner-bg.jpg);
+  margin: 0 auto;
   width: 100%;
   position: relative;
+  background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/banner-bg.jpg);
+  background-position: center center;
 }
   
 .page-header::after {
@@ -62,12 +63,13 @@ img {
   width: 100%;
   height: 100%;
   left: 0;
-  top:0;
+  top: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 2;
 }
   
 .header-container {
+  max-width: 1200px;
   position: relative;
   padding: 0;
   margin: 0;
@@ -109,7 +111,6 @@ img {
 }
   
 .header-container h1 {
-  margin: 0;
   color: #ffffff;
   text-transform: uppercase;
   text-align: center;
@@ -117,8 +118,15 @@ img {
   line-height: 1.6;
   font-weight: 700;
   font-family: "Open Sans";
-  padding-top: 135px;
-  padding-bottom: 146px;
+  padding-top: 105px;
+  padding-bottom: 110px;
+  overflow: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.main-header {
+  max-width: 720px;
 }
 
 /*Main*/
@@ -132,12 +140,19 @@ img {
   display: flex;
   flex-wrap: wrap; 
   justify-content: space-between;
+  max-width: 1200px;
 }
 
 .container {
   max-width: 778px;
   padding: 0 10px;
   margin: 0 auto;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .post {
@@ -152,6 +167,7 @@ img {
   margin: 0;
   font-size: 20px;
   line-height: 1.2;
+  max-width: 350px;
 }
   
 .post-header a {
@@ -229,6 +245,7 @@ time {
   color: #0f0d0e;
   font-weight: 400;
   font-family: "Open Sans";
+  max-width: 318px;
 }
 
   /*Aside*/
@@ -236,7 +253,7 @@ time {
 .aside {
   padding: 0;
   margin: 0;  
-  max-width: 270px;
+  max-width: 272px;
 }
 
 .aside-header {
@@ -274,11 +291,18 @@ time {
   margin-top: 20px;
 }
 
+.aside-post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .post-aside-header {
   padding: 0;
   margin: 0;  
   font-size: 14px;
   text-transform: uppercase;
+  max-width: 185px;
 }
 
 .post-aside-header a {
@@ -346,17 +370,22 @@ time {
 /*Mailing*/
 
 .mailing input {
+  padding: 0;
+  margin: 0;
   border: none;
   width: 100%;
   height: 48px;
   background-color: #f4f7f6;
   margin-top: 20px;
   margin-bottom: 18px;
+  -webkit-appearance: none;
 }
 
 .mailing input:hover,
 .mailing input:focus {
+  box-sizing: border-box;
   border: 1px solid #b59f5b;
+  padding: 0;
 }
 
 .mailing-button {
@@ -431,9 +460,14 @@ time {
   font-family: "Open Sans";
   border-bottom: 1px solid #eeeeee;
   margin-bottom: -1px;
-  padding-top: 18px;
-  padding-bottom: 18px;
-  padding-left: 2p;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 2px;
+}
+
+.themes-item  a:hover,
+.themes-item  a:focus {
+  color:  #b59f5b;
 }
 
 .themes-item sup {
@@ -450,6 +484,7 @@ time {
   padding: 0;
   margin: 0 auto;
   padding: 0 15px;
+  max-width: 1200px;
 }
 
 .social-container {
@@ -468,16 +503,14 @@ time {
   display: flex;
   flex-wrap: wrap;
   width: 370px;
-  justify-content: space-around;
   margin:0 auto;
+  padding-left: 300px;
 }
 
 .social-list a {
   display: block;
-}
-
-.social-button {
-  margin-right: 30px;
+  margin: 0;
+  padding: 0;
 }
 
 .link-twitter {
@@ -497,6 +530,11 @@ time {
   background-repeat: no-repeat;
 }
 
+.link-twitter:hover::after,
+.link-twitter:focus::after {
+  opacity: 0.5;
+}
+
 .link-pinterest {
   position: relative;
 }
@@ -507,11 +545,16 @@ time {
   height: 40px;
   position: absolute;
   top: 20px;
-  right: 35px;
+  right: 0px;
   background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/001-pinterest.svg);
   background-size: 50%;
   background-position: center center;
   background-repeat: no-repeat;
+}
+
+.link-pinterest:hover::after,
+.link-pinterest:focus::after {
+  opacity: 0.5;
 }
 
 .link-facebook {
@@ -524,11 +567,16 @@ time {
   height: 40px;
   position: absolute;
   top: 20px;
-  right: 30px;
+  right: -40px;
   background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/002-facebook-logo.svg);
   background-size: 50%;
   background-position: center center;
   background-repeat: no-repeat;
+}
+
+.link-facebook:hover::after,
+.link-facebook:focus::after {
+  opacity: 0.5;
 }
 
 .link-instagram {
@@ -541,11 +589,16 @@ time {
   height: 40px;
   position: absolute;
   top: 20px;
-  right: 25px;
+  right: -80px;
   background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/005-instagram.svg);
   background-size: 50%;
   background-position: center center;
   background-repeat: no-repeat;
+}
+
+.link-instagram:hover::after,
+.link-instagram:focus::after {
+  opacity: 0.5;
 }
 
 .link-tumblr {
@@ -558,16 +611,24 @@ time {
   height: 40px;
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: -120px;
   background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/social/003-tumblr.svg);
   background-size: 50%;
   background-position: center center;
   background-repeat: no-repeat;
 }
 
+.link-tumblr:hover::after,
+.link-tumblr:focus::after {
+  opacity: 0.5;
+}
+
 .copyright {
   margin-top: 75px;
   margin-bottom: 40px;
+  width: 370px;
+  margin-left: 500px;
+  margin-right: auto;
 }
 
 .link-copyright {
